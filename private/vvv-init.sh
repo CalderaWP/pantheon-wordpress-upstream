@@ -48,7 +48,7 @@ if [ "" == "$db_populated" ] && [ -e private/vvv.sql ]; then
 fi
 
 if [ ! -e wp-cli.local.yml ]; then
-	echo -e "path: ./\nurl: http://vvv.example.com/" > wp-cli.local.yml
+	echo -e "path: ./\nurl: http://vvv.cftesting.taco/" > wp-cli.local.yml
 fi
 
 git config core.fileMode false # usually we're not committing executable files
@@ -64,9 +64,9 @@ if [ ! -e .git/hooks/pre-commit ] && [ -e dev-lib/pre-commit ]; then
 fi
 
 if ! wp --allow-root core is-installed; then
-	wp --allow-root core install --title="Example" --admin_user="dev" --admin_password="dev" --admin_email="dev@127.0.0.1"
+	wp --allow-root core install --title="cftesting" --admin_user="dev" --admin_password="dev" --admin_email="dev@127.0.0.1"
 fi
 
 # Now add any site-specific activations for themes and plugins, for instance
-# wp --allow-root theme activate example
+# wp --allow-root theme activate cftesting
 # wp --allow-root plugin activate jetpack

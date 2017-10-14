@@ -2,3 +2,7 @@
 	path = dev-lib
 	url = https://github.com/xwp/wp-dev-lib.git
 	branch = master
+[submodule "wp-dev-lib"]
+	path = wp-dev-lib
+	url = https://github.com/xwp/wp-dev-lib
+	branch = master

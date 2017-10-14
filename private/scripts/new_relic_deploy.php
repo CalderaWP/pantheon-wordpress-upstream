@@ -18,7 +18,7 @@ if ($nr == FALSE) {
 	exit();
 }
 
-// This is one example that handles code pushes, dashboard
+// This is one cftesting that handles code pushes, dashboard
 // commits, and deploys between environments. To make sure we
 // have good deploy markers, we gather data differently depending
 // on the context.
@@ -50,7 +50,7 @@ elseif ($_POST['wf_type'] == 'deploy') {
 }
 
 
-// Use New Relic's v1 curl command-line example.
+// Use New Relic's v1 curl command-line cftesting.
 // TODO: update to use v2 API with JSON, plus curl() in PHP.
 // Blocked by needing the app_id to use v2 API
 $curl = 'curl -H "x-api-key:'. $data['api_key'] .'"';

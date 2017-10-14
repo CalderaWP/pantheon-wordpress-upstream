@@ -1,4 +1,4 @@
-# Contributing to example.com
+# Contributing to cftesting.taco
 
 ## Dev Setup
 
@@ -12,12 +12,12 @@ cd vvv
 vagrant up --provision
 ```
 
-Once you can verify that `local.wordpress.dev` is accessible on your local system, then you can proceed to add this example.com repo:
+Once you can verify that `local.wordpress.dev` is accessible on your local system, then you can proceed to add this cftesting.taco repo:
 
 ```bash
 cd www
-git clone --recursive git@github.com:xwp/example.com.git example.com
-cd example.com
+git clone --recursive git@github.com:xwp/cftesting.taco.git cftesting.taco
+cd cftesting.taco
 ```
 
 You can then reboot Vagrant to cause the newly added site to be initialized:
@@ -26,13 +26,13 @@ You can then reboot Vagrant to cause the newly added site to be initialized:
 vagrant reload --provision
 ```
 
-Once this finishes, you should be able to access **[vvv.example.com](http://vvv.example.com/)** from your browser. The default WordPress username and password is `dev`.
+Once this finishes, you should be able to access **[vvv.cftesting.taco](http://vvv.cftesting.taco/)** from your browser. The default WordPress username and password is `dev`.
 
-If commands complain about needing to be run in Vagrant, you first can `vagrant ssh` then `cd /srv/www/example.com`
+If commands complain about needing to be run in Vagrant, you first can `vagrant ssh` then `cd /srv/www/cftesting.taco`
 to run the command, or do:
 
 ```bash
-vagrant -c 'cd /srv/www/example.com && wp some command'
+vagrant -c 'cd /srv/www/cftesting.taco && wp some command'
 ```
 
 You can tail the error log in VVV by invoking the bundled script from your host machine:
@@ -77,7 +77,7 @@ git pull https://github.com/xwp/pantheon-wordpress-upstream.git master
 
 The site is hosted with Pantheon.
 
-You can deploy code to the dev site [`dev-example.pantheon.io`](http://dev-example.pantheon.io/) by pushing commits to the `master` branch on the Pantheon repo.
+You can deploy code to the dev site [`dev-cftesting.pantheon.io`](http://dev-cftesting.pantheon.io/) by pushing commits to the `master` branch on the Pantheon repo.
 (Ideally, however, this GitHub repo is set up with Travis CI to push commits to Pantheon when builds pass.)
 To push directly to Pantheon, first make sure you first [add your SSH key to your Pantheon account](https://pantheon.io/docs/articles/users/generating-ssh-keys/#add-the-key-to-your-pantheon-account), and then
 you can add the Pantheon repo as a remote on you existing GitHub clone:
@@ -92,17 +92,17 @@ Then you can deploy simply by merging any feature branches into the `master` bra
 git checkout master && git pull origin && git push pantheon
 ```
 
-You can then [promote the code](https://dashboard.pantheon.io/sites/123e4567-e89b-12d3-a456-426655440000#test/deploys) to the [test environment](http://test-example.pantheon.io/) before deploying it to production via the Pantheon dashboard.
+You can then [promote the code](https://dashboard.pantheon.io/sites/123e4567-e89b-12d3-a456-426655440000#test/deploys) to the [test environment](http://test-cftesting.pantheon.io/) before deploying it to production via the Pantheon dashboard.
 
 Power users will want to check out the [Pantheon CLI](https://github.com/pantheon-systems/cli) which allows you to do a lot of [administrative functions](https://github.com/pantheon-systems/cli/wiki/Available-Commands) (including deployments) as well as any WP-CLI command. To do a deployment to staging (test), for instance:
 
 ```bash
-terminus site deploy --site=example --env=test --from=dev
+terminus site deploy --site=cftesting --env=test --from=dev
 ```
 
 ## Production site info
 
-The production site is located at [https://example.com/](https://example.com/)
+The production site is located at [https://cftesting.taco/](https://cftesting.taco/)
 
 [2]: https://github.com/Varying-Vagrant-Vagrants/VVV
 [3]: https://github.com/Varying-Vagrant-Vagrants/VVV#the-first-vagrant-up
