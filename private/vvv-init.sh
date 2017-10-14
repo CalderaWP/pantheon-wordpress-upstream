@@ -48,7 +48,7 @@ if [ "" == "$db_populated" ] && [ -e private/vvv.sql ]; then
 fi
 
 if [ ! -e wp-cli.local.yml ]; then
-	echo -e "path: ./\nurl: http://vvv.cftesting.taco/" > wp-cli.local.yml
+	echo -e "path: ./\nurl: http://cftesting.taco/" > wp-cli.local.yml
 fi
 
 git config core.fileMode false # usually we're not committing executable files
